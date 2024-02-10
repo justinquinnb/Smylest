@@ -9,8 +9,8 @@ import androidx.compose.runtime.staticCompositionLocalOf
 
 private val lightColorPalette = ColorPalette(
     background = BrightWhite,
-    onBackgroundPrimary = MostlyBlack, // Text & components of basic importance
-    onBackgroundDetail = MostlyWhite, // Background details
+    onBackgroundPrimary = SortaBlack, // Text & components of basic importance
+    onBackgroundDetail = SortaWhite, // Background details
 
     accent = SmyleyYellow, // Accented components, calls-to-action, actions
     onAccent = BrightWhite // Items on top of accented components
@@ -18,8 +18,8 @@ private val lightColorPalette = ColorPalette(
 
 private val darkColorPalette = ColorPalette(
     background = DarkBlack,
-    onBackgroundPrimary = MostlyWhite, // Text & components of basic importance
-    onBackgroundDetail = MostlyBlack, // Background details
+    onBackgroundPrimary = SortaWhite, // Text & components of basic importance
+    onBackgroundDetail = SortaBlack, // Background details
 
     accent = SmyleyYellow, // Accented components, calls-to-action, actions
     onAccent = BrightWhite // Items on top of accented components

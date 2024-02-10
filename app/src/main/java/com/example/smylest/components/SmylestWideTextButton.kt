@@ -45,15 +45,7 @@ fun SmylestWideTextButton(
         modifier = modifier
             .fillMaxWidth(0.75f)
             .clip(RoundedCornerShape(100, 100, 100, 100))
-            .background(
-                Brush.horizontalGradient(
-                    0.0f to colorResource(R.color.DeeperYellow),
-                    0.5f to colorResource(R.color.SmyleyYellow),
-                    1.0f to colorResource(R.color.SofterYellow),
-                    startX = 0.0f,
-                    endX = 100.0f
-                )
-            )
+            .background(SmylestTheme.colors.accent)
     ) {
         Text(
             text = text,

@@ -3,6 +3,8 @@ package com.example.smylest
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.compose.foundation.background
+import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material.icons.Icons
@@ -12,6 +14,9 @@ import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.paint
+import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import com.example.smylest.components.SmylestIconButton
 import com.example.smylest.components.SmylestWideTextButton
@@ -31,7 +36,17 @@ class MainActivity : ComponentActivity() {
 @Preview
 @Composable
 fun PreviewActivity() {
-    Column {
+    Column (
+        modifier = with(Modifier) {
+            fillMaxSize()
+                .paint(
+                    painterResource(id = (
+                            if (isSystemInDarkTheme()) R.drawable.smylestbackground_dark_ else R.drawable.smylestbackground_light_)),
+                    contentScale = ContentScale.FillBounds
+                )
+
+        }
+    ){
         SmylestIconButton(icon = Icons.Default.ChatBubble, iconDesc = "Compose") {}
         SmylestWideTextButton(text = "Hello, World!") {
         }

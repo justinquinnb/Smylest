@@ -51,15 +51,7 @@ fun SmylestIconButton(
         modifier = modifier
             .size(45.dp)
             .clip(CircleShape)
-            .background(
-                Brush.horizontalGradient(
-                    0.0f to colorResource(R.color.DeeperYellow),
-                    0.5f to colorResource(R.color.SmyleyYellow),
-                    1.0f to colorResource(R.color.SofterYellow),
-                    startX = 0.0f,
-                    endX = 100.0f
-                )
-            )
+            .background(SmylestTheme.colors.accent)
     ) {
         Icon(
             imageVector = icon, contentDescription = iconDesc, tint = SmylestTheme.colors.onAccent,

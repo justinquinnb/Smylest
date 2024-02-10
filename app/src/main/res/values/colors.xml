@@ -4,7 +4,7 @@
     <color name="SmyleyYellow">#FFf7b037</color>
     <color name="SofterYellow">#FFf4bb49</color>
     <color name="BrightWhite">#FFfcfcfc</color>
-    <color name="MostlyWhite">#FFf7f2ea</color>
-    <color name="MostlyBlack">#FF1f1f1f</color>
+    <color name="SortaWhite">#FFf7f2ea</color>
+    <color name="SortaBlack">#FF383838</color>
     <color name="Black">#FF0f0e0c</color>
 </resources>
