@@ -12,6 +12,14 @@ private val lightColorPalette = ColorPalette(
     onBackgroundPrimary = SortaBlack, // Text & components of basic importance
     onBackgroundDetail = SortaWhite, // Background details
 
+    container = BrightWhite,
+    onContainerPrimary = SortaBlack,
+    onContainerSecondary = DarkGray,
+    onContainerDetail = PureWhite,
+
+    primaryBorder = DarkGray,
+    secondaryBorder = LightGray,
+
     accent = SmyleyYellow, // Accented components, calls-to-action, actions
     onAccent = BrightWhite // Items on top of accented components
 )
@@ -20,6 +28,14 @@ private val darkColorPalette = ColorPalette(
     background = DarkBlack,
     onBackgroundPrimary = SortaWhite, // Text & components of basic importance
     onBackgroundDetail = SortaBlack, // Background details
+
+    container = DarkBlack,
+    onContainerPrimary = SortaWhite,
+    onContainerSecondary = LightGray,
+    onContainerDetail = PureBlack,
+
+    primaryBorder = DarkGray,
+    secondaryBorder = LightGray,
 
     accent = SmyleyYellow, // Accented components, calls-to-action, actions
     onAccent = BrightWhite // Items on top of accented components

@@ -8,6 +8,14 @@ data class ColorPalette(
     var onBackgroundPrimary: Color, // Text & components of basic importance
     var onBackgroundDetail: Color, // Background details
 
+    var container: Color, // Containers
+    var onContainerPrimary: Color,
+    var onContainerSecondary: Color,
+    var onContainerDetail: Color,
+
+    var primaryBorder: Color,
+    var secondaryBorder: Color,
+
     var accent: Color, // Accented components, calls-to-action, actions
     var onAccent: Color // Items on top of accented components
 )
