@@ -19,6 +19,7 @@ import com.example.smylest.components.BubbleOrientation
 import com.example.smylest.components.ComposeMessageBubble
 import com.example.smylest.components.InboundMessageBubble
 import com.example.smylest.components.MessageBubbleContainer
+import com.example.smylest.components.OutboundMessageBubble
 import com.example.smylest.components.SmylestIconButton
 import com.example.smylest.components.SmylestWideTextButton
 import com.example.smylest.ui.theme.SmylestTheme
@@ -65,7 +66,21 @@ fun PreviewActivity() {
             hint = "What do you need?"
         )
         InboundMessageBubble(
-            messageTimestamp = "00:00am, #/#/##",
-            message = "Test message")
+            messageTimestamp = "timestamp",
+            message = "test message",
+            action = {
+                SmylestIconButton(
+                    icon = Icons.Default.ChatBubble,
+                    iconDesc = "Reply to this request") {
+                    // on-click action
+                }
+            }
+        )
+
+        OutboundMessageBubble(
+            messageTimestamp = "timestamp",
+            filter = "Global",
+            message = "Hey, I'm looking for xyz\nasdasdfasdf\nasdfasfdasdf\nasdfasdfasfd"
+        )
     }
 }
