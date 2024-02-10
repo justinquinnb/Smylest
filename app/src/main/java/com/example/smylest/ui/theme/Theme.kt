@@ -57,7 +57,7 @@ fun CurrentColorPalette(
     return if (darkTheme) localReplacementDarkColors else localReplacementLightColors
 }
 
-object BusAppTheme {
+object SmylestTheme {
     val colors: ColorPalette
         @Composable
         get() = CurrentColorPalette().current
