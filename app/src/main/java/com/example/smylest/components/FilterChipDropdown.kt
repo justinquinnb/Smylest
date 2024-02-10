@@ -5,7 +5,6 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxHeight
-import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.wrapContentWidth
@@ -28,13 +27,13 @@ import com.example.smylest.ui.theme.SmylestTheme
 
 @Preview
 @Composable
-fun PreviewTopicChip() {
-    TopicChip("TestTopic! Woot woot!")
+fun PreviewFilterChipDropdown() {
+    FilterChipDropdown("TestTopic! Woot woot!")
 }
 
 @Composable
-fun TopicChip(
-    topic: String
+fun FilterChipDropdown(
+    filter: String
 ) {
     Box(
         contentAlignment = Alignment.Center,
@@ -50,7 +49,7 @@ fun TopicChip(
             modifier = Modifier.padding(start = 15.dp, end = 15.dp)
         ){
             Text(
-                text = topic,
+                text = filter,
                 color = SmylestTheme.colors.onContainerSecondary,
                 softWrap = false,
                 style = TextStyle(

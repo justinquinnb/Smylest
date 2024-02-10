@@ -20,8 +20,8 @@ import com.example.smylest.ui.theme.SmylestTheme
 
 @Preview
 @Composable
-private fun PreviewMultilineTextField(){
-    MultilineTextField(
+private fun PreviewMultiLineTextField(){
+    MultiLineTextField(
         value = "",
         hintText = "Hint",
         onValueChanged = {},
@@ -32,7 +32,7 @@ private fun PreviewMultilineTextField(){
  * A multi-line, expanding text field with a prompt
  */
 @Composable
-fun MultilineTextField(
+fun MultiLineTextField(
     value: String,
     onValueChanged: (String) -> Unit,
     maxLines: Int,

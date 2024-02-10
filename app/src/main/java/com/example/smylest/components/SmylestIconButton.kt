@@ -45,7 +45,7 @@ fun SmylestIconButton(
         Icon(
             imageVector = icon, contentDescription = iconDesc, tint = SmylestTheme.colors.onAccent,
             modifier = Modifier
-                .padding(5.dp)
+                .padding(12.dp)
                 .fillMaxSize()
                 .align(Alignment.Center)
         )

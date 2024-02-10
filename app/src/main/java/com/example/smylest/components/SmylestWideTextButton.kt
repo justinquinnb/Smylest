@@ -55,7 +55,7 @@ fun SmylestWideTextButton(
         Text(
             text = text,
             color = colorResource(R.color.BrightWhite),
-            style = SmylestTheme.typography.labelMedium,
+            style = SmylestTheme.typography.labelLarge,
             softWrap = false,
         )
     }

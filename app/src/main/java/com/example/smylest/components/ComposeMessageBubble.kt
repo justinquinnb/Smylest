@@ -8,7 +8,6 @@ import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.magnifier
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -19,9 +18,6 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
-import androidx.compose.ui.text.TextStyle
-import androidx.compose.ui.text.font.FontStyle
-import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.smylest.ui.theme.SmylestTheme
@@ -34,6 +30,9 @@ private fun PreviewComposeMessageBubble() {
         hint = "Fashion a smile here...")
 }
 
+/**
+ * Message bubble to make or fulfill a smile request
+ */
 @Composable
 fun ComposeMessageBubble(
     prompt: String,
@@ -61,9 +60,10 @@ fun ComposeMessageBubble(
                 Spacer(modifier = Modifier.weight(
                     weight = 1f,
                     fill = true))
-                TopicChip("Select Topic")
+                FilterChipDropdown("Visibility")
             }
 
+            // Yellow spacer
             Spacer(
                 modifier = Modifier
                     .height(6.dp)
@@ -73,7 +73,7 @@ fun ComposeMessageBubble(
             )
 
             // Text field
-            MultilineTextField(
+            MultiLineTextField(
                 value = text,
                 onValueChanged = {text = it},
                 hintText = hint,
@@ -81,7 +81,5 @@ fun ComposeMessageBubble(
                 modifier = Modifier.padding(top = 4.dp)
             )
         }
-
-
     }
 }

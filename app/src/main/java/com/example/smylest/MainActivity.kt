@@ -17,6 +17,7 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import com.example.smylest.components.BubbleOrientation
 import com.example.smylest.components.ComposeMessageBubble
+import com.example.smylest.components.InboundMessageBubble
 import com.example.smylest.components.MessageBubbleContainer
 import com.example.smylest.components.SmylestIconButton
 import com.example.smylest.components.SmylestWideTextButton
@@ -60,7 +61,11 @@ fun PreviewActivity() {
             Text("Right Bubble")
         }
         ComposeMessageBubble(
-            prompt = "Test prompt",
-            hint = "Test hint")
+            prompt = "Compose a message...",
+            hint = "What do you need?"
+        )
+        InboundMessageBubble(
+            messageTimestamp = "00:00am, #/#/##",
+            message = "Test message")
     }
 }
