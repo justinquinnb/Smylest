@@ -6,6 +6,7 @@ import androidx.compose.ui.graphics.Color
 data class ColorPalette(
     var background: Color, // Screen backgrounds
     var onBackgroundPrimary: Color, // Text & components of basic importance
+    var onBackgroundSecondary: Color,
     var onBackgroundDetail: Color, // Background details
 
     var container: Color, // Containers

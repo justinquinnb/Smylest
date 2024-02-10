@@ -10,6 +10,7 @@ import androidx.compose.runtime.staticCompositionLocalOf
 private val lightColorPalette = ColorPalette(
     background = BrightWhite,
     onBackgroundPrimary = SortaBlack, // Text & components of basic importance
+    onBackgroundSecondary = DarkGray,
     onBackgroundDetail = SortaWhite, // Background details
 
     container = BrightWhite,
@@ -27,6 +28,7 @@ private val lightColorPalette = ColorPalette(
 private val darkColorPalette = ColorPalette(
     background = DarkBlack,
     onBackgroundPrimary = SortaWhite, // Text & components of basic importance
+    onBackgroundSecondary = LightGray,
     onBackgroundDetail = SortaBlack, // Background details
 
     container = DarkBlack,
