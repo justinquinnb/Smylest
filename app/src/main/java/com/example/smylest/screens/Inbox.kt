@@ -1,5 +1,6 @@
 package com.example.smylest.screens
 
+import android.content.Context
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -13,8 +14,11 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.datastore.dataStore
 import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
+import com.example.smylest.MainActivity
+import com.example.smylest.OutboundMessagesSerializer
 import com.example.smylest.components.BasicPage
 import com.example.smylest.components.ComposeMessageBubble
 import com.example.smylest.components.InboundMessageBubble
@@ -65,8 +69,8 @@ fun InboxScreen(navController: NavController) {
                 modifier = Modifier.padding(vertical = 15.dp)
             )
 
-            val outboundMessages: Array<OutboundMessage> = OutboundMessage.loadAll()
-            println("Hello??")
+            val outboundMessages: List<OutboundMessage> = MainActivity.getOutboundMessages()
+
             Column {
                 outboundMessages.forEach {outboundMessage ->
                     OutboundMessageBubble(

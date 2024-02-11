@@ -36,7 +36,8 @@ private fun PreviewComposeMessageBubble() {
 @Composable
 fun ComposeMessageBubble(
     prompt: String,
-    hint: String
+    hint: String,
+    onValueChanged: (String) -> Unit = {}
 ) {
     var text by remember {
         mutableStateOf("")
@@ -44,9 +45,7 @@ fun ComposeMessageBubble(
     MessageBubbleContainer(
         orientation = BubbleOrientation.RIGHT,
     ){
-        Column(
-
-        ){
+        Column(){
             // Context
             Row(
                 verticalAlignment = Alignment.CenterVertically,
@@ -72,10 +71,11 @@ fun ComposeMessageBubble(
                     .background(color = SmylestTheme.colors.accent)
             )
 
+
             // Text field
             MultiLineTextField(
                 value = text,
-                onValueChanged = {text = it},
+                onValueChanged = onValueChanged,
                 hintText = hint,
                 maxLines = 7,
                 modifier = Modifier.padding(top = 4.dp)

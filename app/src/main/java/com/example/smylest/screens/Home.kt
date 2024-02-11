@@ -95,14 +95,6 @@ fun HomeScreen(navController: NavController) {
                     navController.navigate(Screen.BrowseRequestsScreen.route)
                 }
 
-                // TODO REMOVE
-
-                val savingMessageTest: OutboundMessage = OutboundMessage(
-                    "Test message text",
-                    MessageType.OUTBOUND_REQUEST,
-                    MessageVisibility.GLOBAL
-                )
-
                 // Inbox button
                 Row(
                     verticalAlignment = Alignment.CenterVertically,
@@ -110,8 +102,6 @@ fun HomeScreen(navController: NavController) {
                     modifier = Modifier
                         .fillMaxWidth(0.75f)
                         .clickable(){
-                            // TODO remove
-                            savingMessageTest.save()
                             navController.navigate(Screen.InboxScreen.route)
                         }
                 ) {
