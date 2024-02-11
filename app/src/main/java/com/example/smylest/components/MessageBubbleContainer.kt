@@ -43,8 +43,8 @@ fun MessageBubbleContainer(
     onClick: () -> Unit = {},
     content: @Composable (Modifier) -> Unit
 ) {
-    val leftCorner = if (orientation == BubbleOrientation.LEFT) 8.dp else 25.dp
-    val rightCorner = if (orientation == BubbleOrientation.RIGHT) 8.dp else 25.dp
+    val leftCorner = if (orientation == BubbleOrientation.LEFT) 4.dp else 25.dp
+    val rightCorner = if (orientation == BubbleOrientation.RIGHT) 4.dp else 25.dp
 
     Surface(
         shape = RoundedCornerShape(

@@ -17,5 +17,17 @@ fun Navigation(contentPadding: PaddingValues) {
         composable(route = Screen.ComposeRequestScreen.route) {
             ComposeRequestScreen(navController = navController)
         }
+
+        composable(route = Screen.ComposeResponseScreen.route) {
+            ComposeResponseScreen(navController = navController)
+        }
+
+        composable(route = Screen.InboxScreen.route) {
+            InboxScreen(navController = navController)
+        }
+
+        composable(route = Screen.BrowseRequestsScreen.route) {
+            BrowseRequestsScreen(navController = navController)
+        }
     }
 }
