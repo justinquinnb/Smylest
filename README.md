@@ -1,3 +1,4 @@
+## So, what's a Smylest?
 **Smylest** | /Smile-lest/ | _noun._ <br>
 _A hero who makes the world a better place fashioning one smile at a time_
 
