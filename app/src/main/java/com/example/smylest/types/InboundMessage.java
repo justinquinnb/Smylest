@@ -9,10 +9,19 @@ public class InboundMessage extends Message {
     private String authorName = "Anonymous";
     private int authorImage = R.drawable.smylestanonymoususer;
 
-    public InboundMessage(String text, String authorName, int authorImage) {
-        super(text, MessageType.INBOUND_RESPONSE);
+    public InboundMessage(
+            String text,
+            String authorName,
+            int authorImage,
+            MessageVisibility messageVisibility
+    ) {
+        super(text, MessageType.INBOUND_RESPONSE, messageVisibility);
         this.authorName = authorName;
         this.authorImage = authorImage;
+    }
+
+    public InboundMessage(String text, MessageType messageType, MessageVisibility messageVisibility) {
+        super(text, messageType, messageVisibility);
     }
 
     public String getAuthorName() {

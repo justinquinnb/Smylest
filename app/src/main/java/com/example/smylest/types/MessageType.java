@@ -5,17 +5,22 @@ package com.example.smylest.types;
  */
 public enum MessageType {
     /**
-     * A response to a user's request from another user
+     * Someone else's response to your request
      */
     INBOUND_RESPONSE,
 
     /**
-     * A request for another user's response
+     * Someone else's request waiting for you to respond
+     */
+    INBOUND_REQUEST,
+
+    /**
+     * Your request waiting for someone else to respond
      */
     OUTBOUND_REQUEST,
 
     /**
-     * A response delivered/being delivered to fulfill a user's request
+     * Your response to someone else's request
      */
-    OUTBOUND_RESPONSE
+    OUTBOUND_RESPONSE,
 }

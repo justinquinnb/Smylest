@@ -16,11 +16,9 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
-import com.example.smylest.MainActivity
 import com.example.smylest.components.BasicPage
 import com.example.smylest.components.ComposeMessageBubble
 import com.example.smylest.components.SmylestWideTextButton
-import com.example.smylest.types.OutboundMessage
 import com.example.smylest.ui.theme.SmylestTheme
 
 /*
@@ -56,8 +54,7 @@ fun ComposeRequestScreen(navController: NavController) {
             var inputValue by rememberSaveable { mutableStateOf("")}
             ComposeMessageBubble(
                 prompt = "What's on your mind?",
-                hint = "Type your message...",
-                onValueChanged = {inputValue = it}
+                hint = "Type your message..."
             )
 
             // TODO consider adding a remember-by value here to toggle button functionality
@@ -67,16 +64,7 @@ fun ComposeRequestScreen(navController: NavController) {
 
             SmylestWideTextButton(
                 text = "Make me smile!",
-                onClick = {
-                    MainActivity.saveOutboundMessage(
-                        OutboundMessage(
-                            text = inputValue,
-                            timeStamp = "test time stamp",
-                            messageType = "who knows what type it is"
-                        )
-                    )
-                    navController.navigate(Screen.InboxScreen.route)
-                          },
+                onClick = {navController.navigate(Screen.InboxScreen.route)},
                 modifier = Modifier.align(Alignment.CenterHorizontally)
             )
 

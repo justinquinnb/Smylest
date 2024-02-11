@@ -1,12 +1,12 @@
 package com.example.smylest.screens
 
-import android.content.Context
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -14,16 +14,15 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import androidx.datastore.dataStore
 import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
-import com.example.smylest.MainActivity
-import com.example.smylest.OutboundMessagesSerializer
+import com.example.smylest.R
 import com.example.smylest.components.BasicPage
-import com.example.smylest.components.ComposeMessageBubble
 import com.example.smylest.components.InboundMessageBubble
 import com.example.smylest.components.OutboundMessageBubble
-import com.example.smylest.components.SmylestWideTextButton
+import com.example.smylest.types.InboundMessage
+import com.example.smylest.types.MessageType
+import com.example.smylest.types.MessageVisibility
 import com.example.smylest.types.OutboundMessage
 import com.example.smylest.ui.theme.SmylestTheme
 
@@ -50,7 +49,6 @@ private fun PreviewInboxScreen() {
 fun InboxScreen(navController: NavController) {
     BasicPage{
         Column() {
-            Spacer(Modifier.weight(.2f))
             Text(
                 text = "Inbox",
                 style = SmylestTheme.typography.displayLarge,
@@ -58,53 +56,87 @@ fun InboxScreen(navController: NavController) {
                 textAlign = TextAlign.Center,
                 modifier = Modifier
                     .fillMaxWidth(0.75f)
-                    .padding(bottom = 15.dp)
+                    .padding(top = 15.dp)
                     .align(Alignment.CenterHorizontally)
             )
 
-            Text(
-                text = "Concentrated Happiness:",
-                style = SmylestTheme.typography.displayMedium,
-                color = SmylestTheme.colors.onBackgroundSecondary,
-                modifier = Modifier.padding(vertical = 15.dp)
-            )
+            Column(
+                modifier = Modifier.verticalScroll(rememberScrollState())
+            ) {
+                Text(
+                    text = "Concentrated Happiness:",
+                    style = SmylestTheme.typography.displayMedium,
+                    color = SmylestTheme.colors.onBackgroundSecondary,
+                    modifier = Modifier.padding(bottom = 15.dp)
+                )
 
-            val outboundMessages: List<OutboundMessage> = MainActivity.getOutboundMessages()
-
-            Column {
-                outboundMessages.forEach {outboundMessage ->
-                    OutboundMessageBubble(
-                        messageTimestamp = outboundMessage.timeStamp,
-                        filter = outboundMessage.visibility,
-                        message = outboundMessage.text
+                val inboundMessages: List<InboundMessage> = listOf(
+                    InboundMessage(
+                        "Hi there! I hope you're doing a little bit better now," +
+                                " I'd just like to say that...",
+                        MessageType.INBOUND_RESPONSE,
+                        MessageVisibility.GLOBAL
+                    ),
+                    InboundMessage(
+                        "Hey, sometimes these things happen! It may be unbearable in the" +
+                                " moment, but...",
+                        "Julian C.",
+                        R.drawable.smyleststockpfp1,
+                        MessageVisibility.MY_AGE_GROUP
+                    ),
+                    InboundMessage(
+                        "I had a very similar experience as you before. I like to think of" +
+                                " it as this: You...",
+                        "Natasha L.",
+                        R.drawable.smyleststockpfp2,
+                        MessageVisibility.MY_LOCATION
                     )
+                )
+
+                Column(
+                    verticalArrangement = Arrangement.spacedBy(15.dp)
+                ){
+                    inboundMessages.forEach {inboundMessage ->
+                        InboundMessageBubble(inboundMessage)
+                    }
+                }
+
+                Text(
+                    text = "Outbound Messages:",
+                    style = SmylestTheme.typography.displayMedium,
+                    color = SmylestTheme.colors.onBackgroundSecondary,
+                    modifier = Modifier.padding(vertical = 15.dp)
+                )
+
+                val outboundMessages: List<OutboundMessage> = listOf(
+                    OutboundMessage(
+                        "Hey, I'm not feeling so great. I recently failed some important" +
+                                " finals, and now...",
+                        MessageType.OUTBOUND_REQUEST,
+                        MessageVisibility.GLOBAL
+                    ),
+                    OutboundMessage(
+                        "That sounds like a wonderful idea though! Trust me, I went through the" +
+                                " same thing...",
+                        MessageType.OUTBOUND_RESPONSE,
+                        MessageVisibility.GLOBAL
+                    ),
+                    OutboundMessage(
+                        "I wouldn't worry about it! You seem like a strong person, and I'm" +
+                                " confident you'll...",
+                        MessageType.OUTBOUND_RESPONSE,
+                        MessageVisibility.GLOBAL
+                    )
+                )
+
+                Column(
+                    verticalArrangement = Arrangement.spacedBy(15.dp)
+                ){
+                    outboundMessages.forEach {outboundMessage ->
+                        OutboundMessageBubble(outboundMessage)
+                    }
                 }
             }
-
-            InboundMessageBubble(
-                messageTimestamp = "7:32pm, 2/10/24",
-                message = "Hi! I've been feeling pretty down lately. I recently failed some important" +
-                        "finals, and now it's looking like I won't pass my required classes :/") {
-            }
-
-            Spacer(Modifier.height(20.dp))
-
-            ComposeMessageBubble(
-                prompt = "Make them smile:",
-                hint = "Type your message...",
-            )
-
-            // TODO consider adding a remember-by value here to toggle button functionality
-            // based on whether the above text field has been filled out
-            Spacer(Modifier.weight(.2f))
-
-            SmylestWideTextButton(
-                text = "Make them smile!",
-                onClick = {navController.navigate(Screen.InboxScreen.route)},
-                modifier = Modifier.align(Alignment.CenterHorizontally)
-            )
-
-            Spacer(Modifier.weight(.2f))
         }
     }
 }

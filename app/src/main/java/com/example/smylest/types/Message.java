@@ -17,10 +17,13 @@ public abstract class Message {
 
     private static int identifierCount;
 
-    Message(String text, MessageType messageType) {
+    Message(String text, MessageType messageType, MessageVisibility messageVisibility) {
         this.text = text;
+        this.messageType = messageType;
+        this.messageVisibility = messageVisibility;
 
-        LocalDateTime currentTimeAndDay = LocalDateTime.now(ZoneId.of("UTC-5"));
+        long randomMinutesToAdd = -100L + (long) (Math.random() * (200L));
+        LocalDateTime currentTimeAndDay = LocalDateTime.now(ZoneId.of("UTC-5")).plusMinutes(randomMinutesToAdd);
         this.timeStamp = DateTimeFormatter.ofLocalizedDateTime(FormatStyle.SHORT).format(currentTimeAndDay);
 
         this.uniqueIdentifier = getNewUniqueIdentifier();
@@ -43,9 +46,7 @@ public abstract class Message {
         return this.messageType;
     }
 
-    public MessageVisibility getMessageVisibility() {
-        return this.messageVisibility;
-    }
+    public String getMessageVisibility() {return MessageVisibility.asString(this.messageVisibility);}
 
     public int getUniqueIdentifier() {
         return this.uniqueIdentifier;

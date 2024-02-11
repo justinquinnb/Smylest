@@ -28,15 +28,15 @@ public enum MessageVisibility {
     public static String asString(MessageVisibility messageVisibility) {
         switch (messageVisibility) {
             case GLOBAL:
-                return "Global";
+                return "for all";
             case MY_SEX:
-                return "My Sex";
+                return "by sex";
             case MY_AGE_GROUP:
-                return "My Age";
+                return "by age";
             case MY_LOCATION:
-                return "My Location";
+                return "by location";
             default:
-                return "Unknown";
+                return "by unknown";
         }
     }
 }

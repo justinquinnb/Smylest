@@ -17,6 +17,10 @@ import com.example.smylest.components.BasicPage
 import com.example.smylest.components.ComposeMessageBubble
 import com.example.smylest.components.InboundMessageBubble
 import com.example.smylest.components.SmylestWideTextButton
+import com.example.smylest.types.InboundMessage
+import com.example.smylest.types.MessageType
+import com.example.smylest.types.MessageVisibility
+import com.example.smylest.types.OutboundMessage
 import com.example.smylest.ui.theme.SmylestTheme
 
 /*
@@ -51,10 +55,13 @@ fun ComposeResponseScreen(navController: NavController) {
             )
 
             InboundMessageBubble(
-                messageTimestamp = "7:32pm, 2/10/24",
-                message = "Hi! I've been feeling pretty down lately. I recently failed some important" +
-                        "finals, and now it's looking like I won't pass my required classes :/") {
-            }
+                InboundMessage(
+                    "Hi! I've been feeling pretty down lately. I recently failed some important" +
+                            "finals, and now it's looking like I won't pass my required classes :/",
+                    MessageType.INBOUND_REQUEST,
+                    MessageVisibility.GLOBAL
+                )
+            )
 
             Spacer(Modifier.height(20.dp))
 

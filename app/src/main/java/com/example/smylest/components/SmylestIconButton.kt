@@ -2,6 +2,7 @@ package com.example.smylest.components
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
@@ -41,6 +42,7 @@ fun SmylestIconButton(
             .clip(CircleShape)
             .background(SmylestTheme.colors.accent)
             .border(1.5.dp, SmylestTheme.colors.primaryBorder, CircleShape)
+            .clickable(){onClick}
     ) {
         Icon(
             imageVector = icon, contentDescription = iconDesc, tint = SmylestTheme.colors.onAccent,
