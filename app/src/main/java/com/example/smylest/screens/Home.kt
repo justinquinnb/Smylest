@@ -31,6 +31,9 @@ import com.example.smylest.DEMO_MODE
 import com.example.smylest.R
 import com.example.smylest.components.BasicPage
 import com.example.smylest.components.SmylestWideTextButton
+import com.example.smylest.types.MessageType
+import com.example.smylest.types.MessageVisibility
+import com.example.smylest.types.OutboundMessage
 import com.example.smylest.ui.theme.SmylestTheme
 
 /*
@@ -92,13 +95,25 @@ fun HomeScreen(navController: NavController) {
                     navController.navigate(Screen.BrowseRequestsScreen.route)
                 }
 
+                // TODO REMOVE
+
+                val savingMessageTest: OutboundMessage = OutboundMessage(
+                    "Test message text",
+                    MessageType.OUTBOUND_REQUEST,
+                    MessageVisibility.GLOBAL
+                )
+
                 // Inbox button
                 Row(
                     verticalAlignment = Alignment.CenterVertically,
                     horizontalArrangement = Arrangement.spacedBy(0.dp),
                     modifier = Modifier
                         .fillMaxWidth(0.75f)
-                        .clickable(){navController.navigate(Screen.InboxScreen.route)}
+                        .clickable(){
+                            // TODO remove
+                            savingMessageTest.save()
+                            navController.navigate(Screen.InboxScreen.route)
+                        }
                 ) {
                     Image(
                         painter = painterResource(id = R.drawable.squigglyline),

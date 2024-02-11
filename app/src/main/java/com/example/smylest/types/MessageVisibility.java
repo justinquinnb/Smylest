@@ -23,5 +23,20 @@ public enum MessageVisibility {
     /**
      * Allow only users within a certain distance to view and respond to the request
      */
-    MY_LOCATION
+    MY_LOCATION;
+
+    public static String asString(MessageVisibility messageVisibility) {
+        switch (messageVisibility) {
+            case GLOBAL:
+                return "Global";
+            case MY_SEX:
+                return "My Sex";
+            case MY_AGE_GROUP:
+                return "My Age";
+            case MY_LOCATION:
+                return "My Location";
+            default:
+                return "Unknown";
+        }
+    }
 }
