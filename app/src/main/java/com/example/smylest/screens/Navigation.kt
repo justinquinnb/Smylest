@@ -11,7 +11,11 @@ fun Navigation(contentPadding: PaddingValues) {
     val navController = rememberNavController()
     NavHost(navController = navController, startDestination = Screen.HomeScreen.route) {
         composable(route = Screen.HomeScreen.route) {
-            HomeScreen(navController = navController, contentPadding = contentPadding)
+            HomeScreen(navController = navController)
+        }
+
+        composable(route = Screen.ComposeRequestScreen.route) {
+            ComposeRequestScreen(navController = navController)
         }
     }
 }

@@ -45,21 +45,18 @@ Col:
  */
 @Preview
 @Composable
-fun PreviewHomeScreen() {
-    HomeScreen(rememberNavController(), PaddingValues(0.dp))
+private fun PreviewHomeScreen() {
+    HomeScreen(rememberNavController())
 }
 
 /**
  * Home screen, allowing users to choose what they need
  */
 @Composable
-fun HomeScreen(navController: NavController, contentPadding: PaddingValues) {
+fun HomeScreen(navController: NavController) {
     BasicPage {
-        Column(modifier = Modifier
-            .padding(contentPadding)
-            .padding(15.dp)
-        ) {
-            Spacer(Modifier.height(200.dp))
+        Column() {
+            Spacer(Modifier.weight(.2f))
 
             // Welcome message
             Column(
@@ -130,7 +127,7 @@ fun HomeScreen(navController: NavController, contentPadding: PaddingValues) {
                 }
             }
 
-            Spacer(Modifier.height(170.dp))
+            Spacer(Modifier.weight(.2f))
 
             val logotype: Int = if (isSystemInDarkTheme()) R.drawable.smylestlogotype_dark_ else R.drawable.smylestlogotype_light_
             Image(
