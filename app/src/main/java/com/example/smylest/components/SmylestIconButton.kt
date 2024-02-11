@@ -42,7 +42,7 @@ fun SmylestIconButton(
             .clip(CircleShape)
             .background(SmylestTheme.colors.accent)
             .border(1.5.dp, SmylestTheme.colors.primaryBorder, CircleShape)
-            .clickable(){onClick}
+            .clickable(onClick = onClick, onClickLabel = iconDesc)
     ) {
         Icon(
             imageVector = icon, contentDescription = iconDesc, tint = SmylestTheme.colors.onAccent,
