@@ -35,6 +35,9 @@ private fun PreviewComposeRequestScreen() {
     ComposeRequestScreen(rememberNavController())
 }
 
+/**
+ * A screen where users may compose their request for a smile
+ */
 @Composable
 fun ComposeRequestScreen(navController: NavController) {
     BasicPage{

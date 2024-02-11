@@ -43,13 +43,13 @@ private fun PreviewInboundMessageBubble() {
     InboundMessageBubble(
         messageTimestamp = "timestamp",
         message = "test message",
-        action = {
+        /*action = {
             SmylestIconButton(
                 icon = Icons.Default.ChatBubble,
                 iconDesc = "Reply to this request") {
                 // on-click action
             }
-        }
+        }*/
     )
 }
 
@@ -62,16 +62,20 @@ fun InboundMessageBubble(
     messageAuthorName: String = "Anonymous",
     messageTimestamp: String,
     message: String,
+    offsetAction: Boolean = false,
     action: @Composable () -> Unit = {}
 ) {
     var text by remember {
         mutableStateOf("")
     }
+
+    // Determine if an action button is passed and adjust padding accordingly
+    val bottomPaddingForAction: Modifier = if (offsetAction) Modifier.padding(bottom = 15.dp) else Modifier
+    val rightPaddingForAction: Modifier = if (offsetAction) Modifier.padding(end = 15.dp) else Modifier
+
     Box() {
-        Row(
-            Modifier.padding(bottom = 15.dp)
-        ) {
-            Column(Modifier.padding(end = 15.dp)) {
+        Row(bottomPaddingForAction) {
+            Column(rightPaddingForAction) {
                 MessageBubbleContainer(
                     orientation = BubbleOrientation.LEFT,
                 ){
