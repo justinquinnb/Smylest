@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="DeeperYellow">#FFea9525</color>
+    <color name="SmyleyYellow">#FFf7b037</color>
+    <color name="SofterYellow">#FFf4bb49</color>
+    <color name="PureWhite">#FFffffff</color>
+    <color name="BrightWhite">#FFfcfcfc</color>
+    <color name="SortaWhite">#FFf7f2ea</color>
+    <color name="LightGray">#FFd9d9d9</color>
+    <color name="DarkGray">#FF383838</color>
+    <color name="SortaBlack">#FF1a1918</color>
+    <color name="Black">#FF0f0e0c</color>
+    <color name="PureBlack">#FF000000</color>
+</resources>
