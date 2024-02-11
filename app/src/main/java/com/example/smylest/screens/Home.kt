@@ -27,7 +27,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
-import com.example.smylest.DEMO_MODE
+import com.example.smylest.PERSONAL_MODE
 import com.example.smylest.R
 import com.example.smylest.components.BasicPage
 import com.example.smylest.components.SmylestWideTextButton
@@ -68,7 +68,7 @@ fun HomeScreen(navController: NavController) {
                     .fillMaxWidth(0.75f)
             ){
                 Text(
-                    text = if (DEMO_MODE) "How's it going, Justin!" else "How's it going!",
+                    text = if (PERSONAL_MODE) "How's it going, Justin!" else "How's it going!",
                     style = SmylestTheme.typography.displayLarge,
                     color = SmylestTheme.colors.onBackgroundPrimary,
                 )

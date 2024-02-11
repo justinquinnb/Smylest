@@ -16,7 +16,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
-import com.example.smylest.DEMO_MODE
+import com.example.smylest.PERSONAL_MODE
 import com.example.smylest.components.BasicPage
 import com.example.smylest.components.InboundMessageBubble
 import com.example.smylest.types.InboundMessage
@@ -44,7 +44,7 @@ fun BrowseRequestsScreen(navController: NavController) {
                     .fillMaxWidth(0.75f)
             ) {
                 Text(
-                    text = if (DEMO_MODE) "That's great to hear, Justin!" else "That's great to hear!",
+                    text = if (PERSONAL_MODE) "That's great to hear, Justin!" else "That's great to hear!",
                     style = SmylestTheme.typography.displayLarge,
                     color = SmylestTheme.colors.onBackgroundPrimary,
                 )

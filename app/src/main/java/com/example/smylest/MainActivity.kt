@@ -30,7 +30,7 @@ import com.example.smylest.types.MessageType
 import com.example.smylest.types.MessageVisibility
 import com.example.smylest.types.OutboundMessage
 
-val DEMO_MODE = true
+val PERSONAL_MODE = false
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

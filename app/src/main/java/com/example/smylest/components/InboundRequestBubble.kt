@@ -77,7 +77,7 @@ fun InboundRequestBubble(
                             Text(
                                 text = "Posted $filter",
                                 style = SmylestTheme.typography.titleMedium,
-                                modifier = Modifier.padding(start = 15.dp)
+                                modifier = Modifier.padding()
                             )
                             Text(
                                 text = "at $timeStamp",
