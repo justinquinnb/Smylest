@@ -20,7 +20,7 @@ loneliness and depression while providing a means for everyone, no matter who th
 and make the world a bit better, one smile at a time.
 
 ## What it does
-_Feeling down or in need of a confidence-booster?_ Open the Smylest app to compose an anonymous message that anyone in the world 
+_Feeling down?_ Open the Smylest app to compose an anonymous message that anyone in the world 
 (or targeted groups) may reply to, giving you a personalized response that'll make you go :D in a matter of minutes.
 <br><br>
 _Feeling great?_ Use that superpower! Become a Smylest for a day and browse anonymous smile requests that you may respond to, 
